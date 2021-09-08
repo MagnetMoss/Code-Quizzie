@@ -1,11 +1,12 @@
 var startup = document.querySelector("#startGame");
+var questionBox = document.querySelector("#question")
 var choice1 = document.querySelector("#choiceA");
 var choice2 = document.querySelector("#choiceB");
 var choice3 = document.querySelector("#choiceC");
 var choice4 = document.querySelector("#choiceD");
 var timeClock = document.querySelector("#timer");
 var count = 5;
-var questionInd = 0;
+var questionInd = [0];
 
 var questions = [
     {
@@ -31,12 +32,27 @@ var questions = [
     }
 ]
 
+startup.addEventListener("click", () => { 
+    console.log("questions incoming"),
+    
+        currentQuestion = questions[questionInd]
+        console.log(currentQuestion)
+        questionBox.displayText = currentQuestion.title 
+        // choicesDiv.innerHTML = "";
+        currentQuestion.choices.forEach(function(choice, i){
+            choice1.innerHTML = choice[0],      
+            choice2.innerHTML = choice[1],      
+            choice3.innerHTML = choice[2],      
+            choice4.innerHTML = choice[3]      
+        })
+})
+
 startup.addEventListener("click", () =>{
     console.log("start game")
     var countdown = setInterval(() =>{
         timeClock.innerHTML= count
         count = count-=1 
-        console.log(count)
+        // console.log(count)
         if (count<= -1) {       
             clearInterval(countdown)
         }
@@ -45,18 +61,7 @@ startup.addEventListener("click", () =>{
 
 })
 
-// function timer() {
-//     timeClock();
-//     var clock= setInterval(clocktick, 1000);
-//     var timeClock.textContent= time;
-//     var time= questions.length*20;
-//     console.log(timer)
-// }
-// // timer();
-//on click display question
-//manipulate DOM to display questions= .innerHTML
-//create buttons for choices
-// determine if answer is correct= if statement
-
-//on click display score
-//set interval stops game
+questionInd++
+if(questionInd===questions.length){
+    quizover()
+}
