@@ -14,13 +14,11 @@ var answerSelected = false
 prevButton.style.visibility = "hidden"
 nextButton.style.visibility = "hidden"
 
-
 function checkStorage() {
     if(localStorage.getItem('scores')) {
         scores = JSON.parse(localStorage.getItem('scores'))
     }
 }
-
 
 function startQuiz() {
     timer();
@@ -31,12 +29,9 @@ function startQuiz() {
     
 }
 
-
-
-
 function updateUI(x) {
     answerSelected = false
-        question.textContent = questions[x].question;
+        question.textContent = questions[x].title;
         while(answers.firstChild) {
             answers.removeChild(answers.firstChild)
         }
