@@ -1,76 +1,127 @@
-
-header {
-    background-color: maroon;
-    text-align: center;
-    width: 100%;
-    padding: 20px 0 20px 0;
-}
-
-header h1 {
-    font-size: 50px;
-    font-family: fantasy;
-    color: gold;
-}
-
-header h2 {
-    font-size: 35px;
-    font-family: serif;
-    color: gold;
-}
-
-body {
-    background-color: rgb(97, 3, 3);
-    
-}
-
 main {
-    background-color: rgb(97, 3, 3);
-    display: flex;
-    justify-content: row;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+    position: relative;
 }
-
-.box {
-    width: 45vw;
-    height: 65vh;
-    border: solid 2px black;
-    border-radius: 30px;
-    box-shadow: inset 5px 10px 8px 13px rgb(172, 129, 21);
-    background-color: goldenrod;
-    margin: 50px 15px 0 15px;
+button {
+    font-size: 1.4rem;
+    margin-top: 2rem;
 }
-
-#startGame {
-    
-} 
-
- #question {
+label {
     display: flex;
-    justify-content: center;  
+    justify-content: start;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid rgb(255, 0, 0);
+    font-size: 1.4rem;
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 5px;
+    color: black;
+    max-width: 150px;
+    border-radius: 8px;
+}
+input {
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
-#choiceA {
- display: flex;
- justify-content: center;
-}
-
-#choiceB {
+ul {
+    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+li {
+    list-style: none;
+    padding: 1.2rem;
+    font-size: 18px;
 }
 
-#choiceC {
+
+#quiz {
     display: flex;
-    justify-content: center;
-}
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    width: 300px;
+    height: 400px;
+    margin: auto;
 
-#choiceD {
-    display: flex;
-    justify-content: center;
 }
-
+#score {
+    display:flex;
+    justify-content: center;
+    align-self: center;
+}
 #timer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 3rem;
+}
+#startButton {
+    margin: auto;
+    padding: 1.2rem;
+    background-color: transparent;
+    border: none;
+    color: black;
+    border-radius: 8px;
+}
+#formInput {
+    padding: 1.2rem;
+    background-color: transparent;
+    border: 1px solid lightgrey;
+    color: black;
+    border-radius: 8px;
+}
+#startButton:hover {
+    box-shadow: 0 2px 6px -1px rgba(0,0,0,.2)
+}
+#formButton {
+    padding: 1.2rem;
+    background-color: lightgrey;
+    border: none;
+    color: black;
+    border-radius: 8px;
+}
+#formButton:hover {
+    box-shadow: 0 2px 6px -1px rgba(0,0,0,.2)
+}
+.progressBar {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+}
+.mark {
+    background-color: lightgrey;
+    height: 10px;
+    min-width: 19%;
+}
+#prev {
+    background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid rgb(255, 0, 0);
+    width: 100px;
+}
+#next {
+    background-color: rgb(255, 0, 0);
+    color: black;
+    width: 100px;
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 8px;
+}
+#answers {
+    display: flex;
+    flex-direction: column;
+}
+.quiz {
+    background-color: grey!important;
 }
